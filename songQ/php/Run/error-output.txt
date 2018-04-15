@@ -1,0 +1,14 @@
+---
+
+dyld: Library not load
+dyld: Library not loaded: /usr/local/mysql/lib/libmysqlclient.18.dylib
+  Referenced from: /Applications/XAMPP/xamppfiles/htdocs/public_html/labx/html/../php/Run/part1
+  Reason: image not found
+dyld: Library not loaded: /usr/local/mysql/lib/libmysqlclient.18.dylib
+  Referenced from: /Applications/XAMPP/xamppfiles/htdocs/public_html/labx/html/../php/Run/part1
+  Reason: image not found
+dyld: Library not loaded: /usr/local/mysql/lib/libmysqlclient.18.dylib
+  Referenced from: /Applications/XAMPP/xamppfiles/htdocs/public_html/labx/html/../php/Run/part1
+  Reason: image not found
+----------
+
