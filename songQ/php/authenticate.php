@@ -6,7 +6,7 @@ require_once("config.php");
 //Email
 //Acode
 
-$Email = $_GET["Email"];
+$Email = $_GET["Party"];
 $Acode = $_GET["Acode"];
     
 //cool now we've got the goods

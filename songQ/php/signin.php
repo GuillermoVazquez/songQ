@@ -3,15 +3,16 @@ session_start();
 require_once("config.php");
 
 //lets get email and password
-$Email = $_GET['Email'];
-$Password = $_GET['Password'];
+$Party = $_GET['Party'];
+$Username = $_GET['Username'];
 
 //now lets implement remeber-me
+/*
 if(isset($_GET['check'])){
-    $_SESSION["Email"] = "$Email";
-    $_SESSION["Password"] = "$Password";
+    $_SESSION["Party"] = "$Party";
+    $_SESSION["Username"] = "$$Username";
     $_SESSION["RememberFlag"] = 1;
-}
+}*/
 
    //connect to MySQL 
     //use MySQLi
@@ -20,7 +21,7 @@ if(isset($_GET['check'])){
         die("Connection Failure".mysqli_connect_error());
     }
 
-$request = "SELECT email, password FROM users";
+$request = "SELECT partyname FROM songQ";
 $results = mysqli_query($con,$request);
 
 if(!$results){
@@ -29,15 +30,21 @@ if(!$results){
 
 
 while ($row = mysqli_fetch_assoc($results)) {
-    if( ($row['email'] == "$Email") and ($row['password'] == md5($Password)) ){        
+    if( ($row['partyname'] == "$Party") ){        
+        //insert party member
+    $query = "INSERT INTO songQ (partyname,username) VALUES ('$Party','$Username')";
+    $results = mysqli_query($con,$query);
+    if(!$results){
+        die("Insert Failed".mysqli_connect_error());
+        }
         //boom youre in
         $_SESSION["RegState"] = 9;
         $con->close();
         //set the email session variable
-        $_SESSION["Email"] = $Email;
+        $_SESSION["Party"] = $Party;
         //set the password session variable
-        $_SESSION["Password"] = $Password;
-        header("location:../html/chart.php");
+        $_SESSION["Username"] = $Username;
+        header("/html/main.php");
         exit;
 }
 }
@@ -45,6 +52,6 @@ while ($row = mysqli_fetch_assoc($results)) {
 //send back one - notify
 $con->close();
 $_SESSION["RegState"] = 11;
-header("location:../index.php");
+echo "nooo";
 exit;
 ?>

@@ -175,7 +175,7 @@ if(!isset($_SESSION['Password'])){
         
     </script> 
     
-    <title>Lab 2</title>
+    <title>songQ signin</title>
 
   </head>
 
@@ -184,15 +184,15 @@ if(!isset($_SESSION['Password'])){
       <img class="mb-4" src="images/logo.png" alt="" width="450" height="400">
       <h1 style = "color: white" class="h2 mb-3 font-weight-normal">Join a party!</h1>
       <label for="inputEmail" class="sr-only">partyNname</label>
-      <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="email" name = "Email" id="inputEmail" class="form-control" placeholder="party name" autofocus>
+      <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="text" name = "Party" id="inputEmail" class="form-control" placeholder="party name" autofocus>
       <label  for="inputPassword" class="sr-only">username</label>
-      <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="password" name = "Password" id="inputPassword" class="form-control" placeholder="your name">
+      <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="text" name = "Username" id="inputPassword" class="form-control" placeholder="your name">
       <!--<div class="checkbox">
         <label><input name = "check" type="checkbox"> Remember me</label>
       </div> -->
-      <button class="btn btn-lg btn-primary btn-block signing" name = "signin" type="submit" id = "form-signinSubmit">Join</button>
+      <button style = "border-width: 3px; border-color: none; border-radius: 15px;"class="btn btn-lg btn-primary btn-block signing" name = "signin" type="submit" id = "form-signinSubmit">Join</button>
       <div class = "secondButtons">
-          <button style=" background-color: red;float: left; font-size: 12px;border: 0"  class="btn btn-sm btn-primary btn-block" id  = "registerButton" >start a party</button>
+          <button style=" background-color: red;float: left; font-size: 12px;border: 0;border-width: 3px; border-color: none; border-radius: 15px;"  class="btn btn-sm btn-primary btn-block" id  = "registerButton" >Start a party!</button>
       </div>
       <!-- <div class="g-recaptcha" data-sitekey="6LdTGlMUAAAAAJ0omiF94bX0oz2KGDOYdtzq2mb0"></div>
       <p class="mt-5 mb-3 text-muted">2018</p> -->
@@ -203,21 +203,21 @@ if(!isset($_SESSION['Password'])){
       <h1 style="color: white"class="h2 mb-3 font-weight-normal">Start a party!</h1>
       <div class = "secondRegLine">
           <label for="inputPassword" class="sr-only">partyName</label>
-          <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="text" id="inputRegisterEmail" name = "firstname" class="form-control" placeholder="party name" >
+          <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="text" id="inputRegisterEmail" name = "Party" class="form-control" placeholder="party name" >
           <label for="inputPassword" class="sr-only">rpartyName</label>
-          <input style="width: 50%; float: right; border-width: 3px; border-color: red; border-radius: 15px; " type="text" id="inputRegisterEmail" name = "lastname" class="form-control" placeholder="re-enter party name">
+          <input style="width: 50%; float: right; border-width: 3px; border-color: red; border-radius: 15px; " type="text" id="inputRegisterEmail" name = "reParty" class="form-control" placeholder="re-enter party name">
       </div>
       <label for="inputEmail" class="sr-only">username</label>
-      <input style="border-width: 3px; border-color: red; border-radius: 15px;" type="email" id="inputRegisterEmail" name = "Email" class="form-control" placeholder="your name" autofocus>
+      <input style="border-width: 3px; border-color: red; border-radius: 15px;" type="text" id="inputRegisterEmail" name = "username" class="form-control" placeholder="your name" autofocus>
       
-      <button class="btn btn-lg btn-primary btn-block" id = "sendRegistrationButton" type="submit">Register</button>
+      <button style = "border-width: 3px; border-color: none; border-radius: 15px;"class="btn btn-lg btn-primary btn-block" id = "sendRegistrationButton" type="submit">Start it</button>
       <div class = "secondButtons">     
-          <button style=" background-color: red;float: left; font-size: 12px;border: 0" class="btn btn-sm btn-primary btn-block goBack">Go Back!</button>
+          <button style="border-width: 3px; border-color: none; border-radius: 15px; background-color: red;float: left; font-size: 12px;border: 0" class="btn btn-sm btn-primary btn-block goBack">Go Back!</button>
       </div>
       <!-- <div class="g-recaptcha" data-sitekey="6LdTGlMUAAAAAJ0omiF94bX0oz2KGDOYdtzq2mb0"></div>
       <p class="mt-5 mb-3 text-muted">2018</p> -->
     </form>
-    <form id ="setPassword" class = "signin" action = "php/setPassword.php" method="get">
+   <!-- <form id ="setPassword" class = "signin" action = "php/setPassword.php" method="get">
         <img class="mb-4" src="images/Images WORK-07.png" alt="" width="200" height="200">
       <h1 class="h2 mb-3 font-weight-normal">Now Pick a Password!</h1>
       <label for="inputPassword" class="sr-only">Password</label>
@@ -258,6 +258,7 @@ if(!isset($_SESSION['Password'])){
       </div>
       <p class="mt-5 mb-3 text-muted">2018</p>
     </form>
+    -->
     <form id="failure" class = "signin" action = "php/failure.php" method="post">
         <img class="mb-4" src="images/Images WORK-07.png" alt="" width="200" height="200">
       <h1 class="h2 mb-3 font-weight-normal">Hmmmmm, try again</h1>
@@ -266,10 +267,11 @@ if(!isset($_SESSION['Password'])){
       </div>
       <p class="mt-5 mb-3 text-muted">2018</p>
     </form>
+    <!--
     <form id="checkEmail" class = "signin">
         <img class="mb-4" src="images/Images WORK-07.png" alt="" width="200" height="200">
       <h1 class="h2 mb-3 font-weight-normal">Go check your email!!!</h1>
-    </form>
+    </form> -->
     
   </body>
 </html>
