@@ -27,13 +27,13 @@ if(!isset($_SESSION['Password'])){
  regState(9) = setForgotPassword -> login
  regState(9) = signin -> login
  regState(11) = failure to signin
- #ca434e
   -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="soundQ">
-    <meta name="author" content="Mary Davy Guillermo">
+    <meta name="description" content="CIS3238 Lab2 Guillermo Vazquez">
+    <meta name="author" content="Guillermo Vazquez">
+    <link rel="icon" href="../../../../favicon.ico">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/signin.css" rel="stylesheet">
@@ -181,49 +181,42 @@ if(!isset($_SESSION['Password'])){
 
   <body class="text-center">
     <form id = "form-signin" class = "signin" method="get" action = "php/signin.php">
-      <img class="mb-4" src="images/logo.png" alt="" width="500" height="400">
-      <h1 class="h2 mb-3 font-weight-normal">Hey, sign in!</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" name = "Email" id="inputEmail" class="form-control" placeholder="Email address" autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" name = "Password" id="inputPassword" class="form-control" placeholder="Password">
-      <div class="checkbox">
+      <img class="mb-4" src="images/logo.png" alt="" width="450" height="400">
+      <h1 style = "color: white" class="h2 mb-3 font-weight-normal">Join a party!</h1>
+      <label for="inputEmail" class="sr-only">partyNname</label>
+      <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="email" name = "Email" id="inputEmail" class="form-control" placeholder="party name" autofocus>
+      <label  for="inputPassword" class="sr-only">username</label>
+      <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="password" name = "Password" id="inputPassword" class="form-control" placeholder="your name">
+      <!--<div class="checkbox">
         <label><input name = "check" type="checkbox"> Remember me</label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block signing" name = "signin" type="submit" id = "form-signinSubmit">Sign in</button>
+      </div> -->
+      <button class="btn btn-lg btn-primary btn-block signing" name = "signin" type="submit" id = "form-signinSubmit">Join</button>
       <div class = "secondButtons">
-          <button style="width: 40%; float: left; font-size: 12px;border-right-width:thick" class="btn btn-sm btn-primary btn-block" id  = "registerButton" >Register</button>
-          <button style="border-right: 0; border-left-width:thick;  width: 60%; float: right; font-size: 12px" class="btn btn-sm btn-primary btn-block" id = "forgotPasswordButton" >Forgot password!</button>
+          <button style=" background-color: red;float: left; font-size: 12px;border: 0"  class="btn btn-sm btn-primary btn-block" id  = "registerButton" >start a party</button>
       </div>
-      <div class="g-recaptcha" data-sitekey="6LdTGlMUAAAAAJ0omiF94bX0oz2KGDOYdtzq2mb0"></div>
-      <p class="mt-5 mb-3 text-muted">2018</p>
+      <!-- <div class="g-recaptcha" data-sitekey="6LdTGlMUAAAAAJ0omiF94bX0oz2KGDOYdtzq2mb0"></div>
+      <p class="mt-5 mb-3 text-muted">2018</p> -->
     </form>
     
     <form id ="register" class = "signin" action = "php/register.php" method="get">
-        <img class="mb-4" src="images/Images WORK-07.png" alt="" width="200" height="200">
-      <h1 class="h2 mb-3 font-weight-normal">Register Here</h1>
+        <img class="mb-4" src="images/logo.png" alt="" width="450" height="400">
+      <h1 style="color: white"class="h2 mb-3 font-weight-normal">Start a party!</h1>
       <div class = "secondRegLine">
-          <label for="inputPassword" class="sr-only">firstname</label>
-          <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="text" id="inputRegisterfirst" name = "firstname" class="form-control" placeholder="firstname" >
-          <label for="inputPassword" class="sr-only">lastname</label>
-          <input style="width: 50%; float: right; border-width: 3px; border-color: red; border-radius: 15px; " type="text" id="inputRegisterlast" name = "lastname" class="form-control" placeholder="lastname">
+          <label for="inputPassword" class="sr-only">partyName</label>
+          <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="text" id="inputRegisterEmail" name = "firstname" class="form-control" placeholder="party name" >
+          <label for="inputPassword" class="sr-only">rpartyName</label>
+          <input style="width: 50%; float: right; border-width: 3px; border-color: red; border-radius: 15px; " type="text" id="inputRegisterEmail" name = "lastname" class="form-control" placeholder="re-enter party name">
       </div>
-      <label for="inputEmail" class="sr-only">Email Address</label>
-      <input style="border-width: 3px; border-color: red; border-radius: 15px;" type="email" id="inputRegisterEmail" name = "Email" class="form-control" placeholder="email address" autofocus>
-      <div class = "secondRegLine">
-          <label for="inputPassword" class="sr-only">password</label>
-          <input style="width: 50%; float: left; border-width: 3px; border-color: red; border-radius: 15px;" type="password" id="inputRegisterpass" name = "password" class="form-control" placeholder="password" >
-          <label for="inputPassword" class="sr-only">repassword</label>
-          <input style="width: 50%; float: right; border-width: 3px; border-radius: 15px; border-color: #32006f; " type="password" id="inputRegisterrepass" name = "repassword" class="form-control" placeholder="re-enter password">
-      </div> 
+      <label for="inputEmail" class="sr-only">username</label>
+      <input style="border-width: 3px; border-color: red; border-radius: 15px;" type="email" id="inputRegisterEmail" name = "Email" class="form-control" placeholder="your name" autofocus>
+      
       <button class="btn btn-lg btn-primary btn-block" id = "sendRegistrationButton" type="submit">Register</button>
       <div class = "secondButtons">     
-          <button style=" float: left; font-size: 12px;border: 0" class="btn btn-sm btn-primary btn-block goBack">Go Back!</button>
+          <button style=" background-color: red;float: left; font-size: 12px;border: 0" class="btn btn-sm btn-primary btn-block goBack">Go Back!</button>
       </div>
-      <div class="g-recaptcha" data-sitekey="6LdTGlMUAAAAAJ0omiF94bX0oz2KGDOYdtzq2mb0"></div>
-      <p class="mt-5 mb-3 text-muted">2018</p>
+      <!-- <div class="g-recaptcha" data-sitekey="6LdTGlMUAAAAAJ0omiF94bX0oz2KGDOYdtzq2mb0"></div>
+      <p class="mt-5 mb-3 text-muted">2018</p> -->
     </form>
-    
     <form id ="setPassword" class = "signin" action = "php/setPassword.php" method="get">
         <img class="mb-4" src="images/Images WORK-07.png" alt="" width="200" height="200">
       <h1 class="h2 mb-3 font-weight-normal">Now Pick a Password!</h1>
@@ -233,7 +226,7 @@ if(!isset($_SESSION['Password'])){
       </div>
       <button class="btn btn-lg btn-primary btn-block signin" type="submit">Let's Get To It</button>
       <div class = "secondButtons">
-          <button style="float: left; font-size: 12px;border:0" class="btn btn-sm btn-primary btn-block goBack" >Go Back!</button>
+          <button style="background-color: red;float: left; font-size: 12px;border:0" class="btn btn-sm btn-primary btn-block goBack" >Go Back!</button>
           
       </div>
       <p class="mt-5 mb-3 text-muted">2018</p>
