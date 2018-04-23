@@ -12,11 +12,13 @@
     <!-- ok here we will include the jquery script source and then scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript" src="../js/main.js"></script>
     <title>songQ main</title>
     </head>
     
     <body>
-        <div class = "container"style="overflow:scroll">
+       
+        <div class = "container">
                
                 <div class = "input-box">
                            <form id = "userInput" action="#">
@@ -31,7 +33,8 @@
     <!-- Core plugin JavaScript-->
     <script src="../jquery/jquery.easing.min.js"></script>
     <!-- custom for this page -->
-    <script src="../js/main.js"></script>
+    
+    
     </body>
     
 </html>
