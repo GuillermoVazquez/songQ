@@ -1,8 +1,10 @@
 <?php
     
     session_start(); //i need to use session variables so i call session_start
-    require_once('config.php'); //get all your constants in from config.php
+    require_once('config.php'); //get all your constants in from //config.php
     //now fetch web data
+
+    //todo: redirect user to spotify to login 
     $party = $_GET['Party'];
     $reparty = $_GET['reParty'];
     $username = $_GET['username'];
@@ -28,7 +30,7 @@
         
     $con->close();
     $_SESSION["RegState"] = 9;
-    header("html/main.php");
+    header("location:../html/main.php");
     exit;    
     }
 

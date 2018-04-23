@@ -15,8 +15,61 @@ body {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-image: url(../images/kanye.png);
+    background-image: url(../images/kanye.png);
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+
+.container{
+    text-align: center;
+   height: 25%;
+    width: 75%;
+    background-color: white;
+    opacity: .7;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.song{
+    height: 10%;
+    width: 85%;
+    background-color: black;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+.songArtist{
+    background-color: purple;
+    height: 100%;
+    width: 30%;
+}
+
+.songName{
+    
+}
+
+.input-box{
+    height: 10%;
+    width: 55%;
+    display: inline-block;
+}
+
+::placeholder{
+    color: white;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

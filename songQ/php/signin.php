@@ -44,7 +44,7 @@ while ($row = mysqli_fetch_assoc($results)) {
         $_SESSION["Party"] = $Party;
         //set the password session variable
         $_SESSION["Username"] = $Username;
-        header("/html/main.php");
+        header("location:../html/main.php");
         exit;
 }
 }
