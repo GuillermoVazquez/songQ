@@ -12,9 +12,11 @@
 
     //for Spotify GET request
         //for login
-    $client_id = "client_id=a067472b3bb24cd98495015f3a48693f&";
-    $response_type = "response_type=code$";
-    $redirect_uri = "redirect_uri=http://localhost/public_html/songQ/index.php"; 
+    $client_id = "client_id=1361a07cb41c42a0b3d75554217a6ee2&";
+    $response_type = "response_type=code&";
+    $redirect_uri = "redirect_uri=http://localhost:9000/callback"; 
+    //$redirect_uri = "redirect_uri=http://localhost/public_html/songQ/index.php";
+    //redirect_uri=http://localhost/public_html/songQ/index.php
     $url = "https://accounts.spotify.com/authorize?".$client_id.$response_type.$redirect_uri;
 
     if($party == $reparty){
@@ -42,6 +44,7 @@
     curl_setopt($ch, CURLOPT_URL,$url); // set url to post to
     curl_setopt($ch, CURLOPT_FAILONERROR, 1);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);// allow redirects
+    curl_setopt($ch, CURLOPT_COOKIESESSION, 1);// allow redirects    
     curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); // return into a variable
     curl_setopt($ch, CURLOPT_TIMEOUT, 3); // times out after 4s
     $result = curl_exec($ch); // run the whole process
