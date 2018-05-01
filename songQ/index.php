@@ -40,6 +40,7 @@ if(!isset($_SESSION['Password'])){
     <!-- ok here we will include the jquery script source and then scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="js/index.js"></script>
     
     <script>
         
@@ -210,7 +211,7 @@ if(!isset($_SESSION['Password'])){
       <label for="inputEmail" class="sr-only">username</label>
       <input style="border-width: 3px; border-color: red; border-radius: 15px;" type="text" id="inputRegisterEmail" name = "username" class="form-control" placeholder="your name" autofocus>
       
-      <button style = "background-color: #1db954; border-width: 3px; border-color: black; border-radius: 15px;"class="btn btn-lg btn-primary btn-block" id = "sendRegistrationButton" type="submit">Login to Spotify</button>
+      <button style = "background-color: #1db954; border-width: 3px; border-color: black; border-radius: 15px;"class="btn btn-lg btn-primary btn-block" id = "sendRegistrationButton">Login to Spotify</button>
       <div class = "secondButtons">     
           <button style="border-width: 3px; border-color: none; border-radius: 15px; background-color: red;float: left; font-size: 12px;border: 0" class="btn btn-sm btn-primary btn-block goBack">Go Back!</button>
       </div>
