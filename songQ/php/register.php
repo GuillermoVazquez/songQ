@@ -5,20 +5,23 @@
     //now fetch web data
 
     //todo: redirect user to spotify to login 
+/*
     $party = $_GET['Party'];
     $reparty = $_GET['reParty'];
     $username = $_GET['username'];
     $_SESSION["Email"] = "$party";
-
+*/
     //for Spotify GET request
         //for login
-    $client_id = "client_id=1361a07cb41c42a0b3d75554217a6ee2&";
+    $client_id = "client_id=a067472b3bb24cd98495015f3a48693f&";
     $response_type = "response_type=code&";
-    $redirect_uri = "redirect_uri=http://localhost:9000/callback"; 
+    $redirect_uri = "redirect_uri=http://localhost/public_html/songQ/callback.php";
+    $redirect_uri = "redirect_uri=http://localhost/public_html/songQ/callback.php&"; 
+    $scopes = "scope=streaming%20user-read-private%20user-read-email%20user-read-birthdate";
     //$redirect_uri = "redirect_uri=http://localhost/public_html/songQ/index.php";
     //redirect_uri=http://localhost/public_html/songQ/index.php
-    $url = "https://accounts.spotify.com/authorize?".$client_id.$response_type.$redirect_uri;
-
+    $url = "https://accounts.spotify.com/authorize/?".$client_id.$response_type.$redirect_uri.$scopes;
+/*
     if($party == $reparty){
     //connect to MySQL 
     //use MySQLi
@@ -37,7 +40,7 @@
         die("Insert Failed".mysqli_connect_error());
         }
         
-    $con->close();
+    $con->close();*/
     
     //Spotify login    
     $ch = curl_init();    // initialize curl handle
@@ -47,28 +50,27 @@
     curl_setopt($ch, CURLOPT_COOKIESESSION, 1);// allow redirects    
     curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); // return into a variable
     curl_setopt($ch, CURLOPT_TIMEOUT, 3); // times out after 4s
+    //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_VERBOSE, 1); //for returning some body messages
+    curl_setopt($ch, CURLOPT_HEADER, 1);  //for returning header messages
+        
     $result = curl_exec($ch); // run the whole process
-    curl_close($ch);
-    //$Spotify = http_get($url,array("timeout"=>1),$info);
-    //print_r($info);
+    curl_close($ch);    
+    
+    $result = file_get_contents(trim("https://accounts.spotify.com/authorize/?".$client_id.$response_type.$redirect_uri.$scopes));
         
         if($result){
-            //$_SESSION["RegState"] = 9;        
-            //header("location:../html/main.php");
+            $_SESSION["RegState"] = 9;        
             echo $url;
             //echo $result;
+            //header("location:../html/main.php");
             exit;    
         }else{
-            //header("location:../html/main.php");
+            $_SESSION["RegState"] = 11;
+            //header("location:../index.php"); //header in php is called redirection,   handoff
+            //echo $url;
             echo $result;
+            exit;
         }
-            
-    
-    }
-
-
-    $con->close();
-    $_SESSION["RegState"] = 1;
-    header("location:../index.php"); //header in php is called redirection, handoff
-    exit;
+    //}//
 ?>
