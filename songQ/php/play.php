@@ -4,10 +4,9 @@ session_start();
 
 $url = 'https://api.spotify.com/v1/me/player/play';
 $headers = [
-    'Content-Type: application/json',
-    'Authorization: Bearer BQCva9OOcSmJHYuE-dINjkQeRQi8XxIJASk05lcnilUNGraONK2c3J5jRXSzc841JZFeAwgbBOm-dLio_RIFjlFw1TGgLJ9-Rx1herSW2wUkrJW3UHp16vjUf0XewmqOvKyLaMpPzBueofF4zLvNMLo8udPXqYqsji4ivHE'
+    'BQDrkzrGGH5KOpJiwr4nY-4DtrwhGpQkp1CddeqbK7zFJWoD7WTHu-G98eMnKbILxmk8AmAqN4Wugi2-uR_hWFx88YEQO-re9l09oeR8dKP25AorNnFqPLdl37q50Rq64TMLUOf1XpR894Wgxt99tk0y8Yqp2D-eJ3FBEvOD2RAY0edI4oLIPfRLOw'
 ];
-$json_data->uris = ["spotify:track:7iYlacahYFEKx8cpRNC2Tx"];
+$json_data->uris = ["spotify:track:46RVKt5Edm1zl0rXhPJZxz"];
 $json_data = json_encode($json_data);
 
 $ch = curl_init($url);
@@ -17,7 +16,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_POSTFIELDS,$json_data);
 $response = curl_exec($ch);
 
-//echo $response;
+echo $response;
 echo $url;
 
 if (!$response) 

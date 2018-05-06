@@ -9,43 +9,56 @@
 
   <script src="https://sdk.scdn.co/spotify-player.js"></script>
   <script>
-    window.onSpotifyWebPlaybackSDKReady = () => {
-      const token = 'BQDe9NXQ3gwWrYrUTown-MDbqjEHJYXUzM4fQaKcOi5iuccynRgd4r1l6s7B7HL_TTDkZGG4UPPjf0woCxCORKDqxgjQJ8q9hoV6hVgb_65I8QormetfNUpugPTqiBgtaUTjjwqVXXG6EMywKZXXyXn6diDDoKflgUFWlV-pAztoLSdBv5ClMOWtZw';
+    const play = ({
+      spotify_uri,
+      playerInstance: {
+        _options: {
+          getOAuthToken,
+          id
+        }
+      }
+    }) => {
+      getOAuthToken(access_token => {
+        fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
+          method: 'PUT',
+          body: JSON.stringify({ uris: [spotify_uri] }),
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${access_token}`
+          },
+        });
+      });
+    };
+   window.onSpotifyWebPlaybackSDKReady = () => {
+      const token = 'BQDYH2YvmEIQKPbEFre5A1WWtFQ4xAsPjrb28URrlai-KlvGHcBVopaVSKOjYEbPGsVqcJKhD-P0vmbuyxisggfyhA4w5sZfzVIQ-mVKwQRiTfYyvLUYWUejw_oDJXNokGCb8IVa7BleIyPA_8ZyTcsgJg35_VMinjRdGHK2bw';
       const player = new Spotify.Player({
-        name: 'Web Playback SDK Quick Start Player',
+        name: 'SongQ',
         getOAuthToken: cb => { cb(token); }
       });
-
+      window.player = player;
       // Error handling
       player.addListener('initialization_error', ({ message }) => { console.error(message); });
       player.addListener('authentication_error', ({ message }) => { console.error(message); });
       player.addListener('account_error', ({ message }) => { console.error(message); });
       player.addListener('playback_error', ({ message }) => { console.error(message); });
-
       // Playback status updates
       player.addListener('player_state_changed', state => { console.log(state); });
-
       // Ready
       player.addListener('ready', ({ device_id }) => {
         console.log('Ready with Device ID', device_id);
+        play({
+          playerInstance: player,
+          spotify_uri: 'spotify:track:6R6ihJhRbgu7JxJKIbW57w',
+        });
       });
-
       // Not Ready
       player.addListener('not_ready', ({ device_id }) => {
         console.log('Device ID has gone offline', device_id);
       });
-
       // Connect to the player!
       player.connect();
+      
     };
   </script>
-  <form id="failure" class = "signin" action = "php/play.php" method="post">
-        <img class="mb-4" src="images/Images WORK-07.png" alt="" width="200" height="200">
-      <h1 class="h2 mb-3 font-weight-normal">Hmmmmm, try again</h1>
-          <div class = "failureBack">
-          <button style=" float: left; font-size: 12px;border: 0" class="btn btn-sm btn-primary btn-block goBack">Go Back!</button>
-      </div>
-      <p class="mt-5 mb-3 text-muted">2018</p>
-    </form>
 </body>
 </html>
