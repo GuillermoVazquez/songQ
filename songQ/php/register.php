@@ -5,14 +5,14 @@
     //now fetch web data
 
     //todo: redirect user to spotify to login 
-/*
+
     $party = $_GET['Party'];
     $reparty = $_GET['reParty'];
     $username = $_GET['username'];
     $_SESSION["Email"] = "$party";
-*/
+
     //for Spotify GET request
-        //for login
+    //for login
     $client_id = "client_id=a067472b3bb24cd98495015f3a48693f&";
     $response_type = "response_type=code&";
     $redirect_uri = "redirect_uri=http://localhost/public_html/songQ/callback.php";
@@ -21,7 +21,7 @@
     //$redirect_uri = "redirect_uri=http://localhost/public_html/songQ/index.php";
     //redirect_uri=http://localhost/public_html/songQ/index.php
     $url = "https://accounts.spotify.com/authorize/?".$client_id.$response_type.$redirect_uri.$scopes;
-/*
+
     if($party == $reparty){
     //connect to MySQL 
     //use MySQLi
@@ -40,8 +40,9 @@
         die("Insert Failed".mysqli_connect_error());
         }
         
-    $con->close();*/
-    
+    $con->close();
+/*    
+
     //Spotify login    
     $ch = curl_init();    // initialize curl handle
     curl_setopt($ch, CURLOPT_URL,$url); // set url to post to
@@ -72,5 +73,10 @@
             echo $result;
             exit;
         }
-    //}//
+        */
+        
+        $_SESSION["RegState"] = 9;  
+        header("location:../html/main.php");
+        exit;
+    }
 ?>
