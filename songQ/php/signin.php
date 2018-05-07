@@ -40,11 +40,11 @@ while ($row = mysqli_fetch_assoc($results)) {
         //boom youre in
         $_SESSION["RegState"] = 9;
         $con->close();
-        //set the email session variable
+        //set the party session variable
         $_SESSION["Party"] = $Party;
         //set the password session variable
         $_SESSION["Username"] = $Username;
-        header("location:../html/main.php");
+        header("location:getUser.php");
         exit;
 }
 }

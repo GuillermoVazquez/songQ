@@ -52,6 +52,7 @@ body {
     height: 50px;
     width: 55%;
     display: inline-block;
+    color: white;
 }
 
 ::placeholder{

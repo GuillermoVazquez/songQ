@@ -4,7 +4,7 @@
     define("DATABASE","Database");    
     define("USER","root");
     define("PASSWORD","myPassword");
-    define("auth", "BQBstGVhXMVQUka-ystRE_miBrziSMhriDlFqTSAUNU5RHa94AtIcaIQJ_wrUFwAMwnK1s__dzGMfSdFH5kqdVRpgVMDQAQbXohtLJTEiJ_zMOhQNyz_6RjtYEmh-fLr9-LRa82I6bR4aZzCFHFfDSnrByZK2WyyViNqRi_DYzeVMO5Acbz4PGCO8WRrb3CiBtl3AVwnLGn7_nPCjhoibmRa5SiBWlsuNQ");
+    define("auth", "BQA-2Y8ZfBi6lHiSPbOXBu7p1lxL8sdkq22tRCWxeTgxXWvwwOyiH1AUQtgDQ8XuGQDkr53p-l75dJShNNA0aBwTezGuHGPugGXglFEY2zzFN7_FRJsky3Hq6lV2tK0kGJGyPi_LhOCgqYp0spXLuIl6B9g75VojrQFuhFBMB-9eS9nV6l42eQcb4kdVDzXJqBLmtBZpVPBSz9Qptf-WvWbOtUERPvGVpQ");
     //define("SERVER","cis-linux2.temple.edu");
     //define("DATABASE","SP18_3238_tuf43609");
     //define("USER","tuf43609");

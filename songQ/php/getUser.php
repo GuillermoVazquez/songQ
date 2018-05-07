@@ -19,6 +19,9 @@ echo $id;
 //store user id for later use in session var
 $_SESSION["spotifyId"] = "$id";
 
+header("location:createPlaylist.php");
+exit;
+
 if (!$response) 
 {
     return false;
