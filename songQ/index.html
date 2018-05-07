@@ -6,16 +6,17 @@
 <body>
   <h1>Spotify Web Playback SDK Quick Start Tutorial</h1>
   <h2>Open your console log: <code>View > Developer > JavaScript Console</code></h2>
-
   <script src="https://sdk.scdn.co/spotify-player.js"></script>
+  
   <script>
+    
     const play = ({
       spotify_uri,
       playerInstance: {
         _options: {
           getOAuthToken,
           id
-        }
+        } 
       }
     }) => {
       getOAuthToken(access_token => {
@@ -29,6 +30,7 @@
         });
       });
     };
+      
    window.onSpotifyWebPlaybackSDKReady = () => {
       const token = 'BQDYH2YvmEIQKPbEFre5A1WWtFQ4xAsPjrb28URrlai-KlvGHcBVopaVSKOjYEbPGsVqcJKhD-P0vmbuyxisggfyhA4w5sZfzVIQ-mVKwQRiTfYyvLUYWUejw_oDJXNokGCb8IVa7BleIyPA_8ZyTcsgJg35_VMinjRdGHK2bw';
       const player = new Spotify.Player({
@@ -51,6 +53,7 @@
           spotify_uri: 'spotify:track:6R6ihJhRbgu7JxJKIbW57w',
         });
       });
+         
       // Not Ready
       player.addListener('not_ready', ({ device_id }) => {
         console.log('Device ID has gone offline', device_id);
@@ -60,5 +63,6 @@
       
     };
   </script>
+  
 </body>
 </html>
